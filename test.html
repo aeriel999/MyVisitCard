@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тетяна Мосійчук — Full‑Stack .NET Developer</title>
+  <meta name="description" content="Резюме та портфоліо: ASP.NET Core, CQRS, EF Core, React/TypeScript, Electron." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --panel: #121826;
+      --text: #eaeef7;
+      --muted: #94a3b8;
+      --accent: #22d3ee; /* cyan */
+      --accent-2: #a78bfa; /* violet */
+      --ring: rgba(34, 211, 238, 0.35);
+    }
+    :root.light {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0ea5e9; /* sky */
+      --accent-2: #7c3aed; /* violet */
+      --ring: rgba(14, 165, 233, 0.25);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial; color: var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,.16), transparent 60%), radial-gradient(900px 500px at -10% 0%, rgba(34,211,238,.14), transparent 50%), var(--bg);
+      line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    .container { width: min(1080px, 92%); margin-inline: auto; }
+    header.nav {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(1.2) blur(10px); border-bottom: 1px solid rgba(148,163,184,.18);
+      background: color-mix(in oklab, var(--bg) 86%, transparent); /* graceful in browsers that support */
+    }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; padding: 12px 0; }
+    .brand { display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px; }
+    .dot { width: 10px; height: 10px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 6px var(--ring); }
+    .nav-actions { display:flex; align-items:center; gap:.5rem; }
+    .btn, .link { display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius: 12px; text-decoration:none; font-weight:600; border:1px solid rgba(148,163,184,.25); color: var(--text); }
+    .btn:hover { border-color: rgba(148,163,184,.45); box-shadow: 0 6px 18px -8px var(--ring); transform: translateY(-1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #020617; border: 0; }
+
+    /* Hero */
+    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items:center; padding: 56px 0 28px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin: 0 0 10px; letter-spacing:.2px; }
+    .hero p.lead { color: var(--muted); font-size: clamp(14px, 2vw, 18px); margin: 0 0 22px; }
+    .hero-card { background: linear-gradient(180deg, rgba(148,163,184,.08), rgba(148,163,184,.03)); border:1px solid rgba(148,163,184,.18); padding: 18px; border-radius: 16px; display:grid; gap: 12px; }
+    .hero .badges { display:flex; flex-wrap: wrap; gap:8px; margin-top: 6px; }
+    .badge { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: rgba(148,163,184,.14); border: 1px solid rgba(148,163,184,.24); }
+
+    /* Sections */
+    section { padding: 32px 0; }
+    .section-title { font-size: 20px; font-weight:700; letter-spacing:.3px; margin: 0 0 16px; }
+    .cards { display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { grid-column: span 12; background: var(--panel); border:1px solid rgba(148,163,184,.18); border-radius: 16px; padding: 16px; }
+    .card:hover{ border-color: rgba(148,163,184,.36); }
+
+    /* Experience */
+    .xp { display:flex; gap: 14px; }
+    .xp .when { min-width: 120px; font-size: 12px; color: var(--muted); }
+    .xp h3 { margin: 0 0 6px; font-size: 16px; }
+    .xp .meta { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+    .tags { display:flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: 12px; padding: 5px 9px; border-radius: 999px; background: rgba(34,211,238,.14); color: #67e8f9; border: 1px solid rgba(34,211,238,.25); }
+
+    /* Projects */
+    .project { display:grid; grid-template-columns: 1fr; gap: 8px; }
+    .project h3 { margin:0; font-size: 16px; }
+    .project .desc { color: var(--muted); font-size: 14px; }
+
+    /* Skills grid */
+    .skills { display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:12px; }
+    .pill { padding: 10px 12px; border-radius:12px; border:1px dashed rgba(148,163,184,.35); background: linear-gradient(180deg, rgba(148,163,184,.06), rgba(148,163,184,.02)); font-size: 14px; }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(148,163,184,.18); padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero { grid-template-columns: 1fr; padding-top: 28px; }
+      .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 680px){
+      .card.col-6 { grid-column: span 6; }
+      .card.col-4 { grid-column: span 4; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="dot"></span> Тетяна Мосійчук</div>
+      <div class="nav-actions">
+        <a class="link" href="#projects">Проєкти</a>
+        <a class="link" href="#experience">Досвід</a>
+        <a class="btn primary" href="#contact">Зв’язатися</a>
+        <button id="theme" class="btn" aria-label="Перемкнути тему">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1>Full‑Stack .NET Developer</h1>
+        <p class="lead">ASP.NET Core 8 · EF Core · CQRS/MediatR · Clean Architecture · React/TypeScript · Electron · SQLite/PostgreSQL · SignalR</p>
+        <div class="hero-card">
+          <div class="badges">
+            <span class="badge">Рівень: B1+ англійська</span>
+            <span class="badge">Локація: Україна · remote</span>
+            <span class="badge">Відкрита до стажування/Junior</span>
+          </div>
+          <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:6px;">
+            <a class="btn primary" href="./cv.pdf" download>⬇ Завантажити CV (PDF)</a>
+            <a class="btn" href="mailto:tanemosiichuk@example.com">✉ Написати листа</a>
+            <a class="btn" href="https://github.com/username" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Автопортрет/аватар -->
+        <div style="aspect-ratio: 1/1; border-radius: 18px; border:1px solid rgba(148,163,184,.18); background: linear-gradient(135deg, rgba(34,211,238,.25), rgba(167,139,250,.25)), url('avatar.jpg') center/cover, var(--panel);
+        box-shadow: 0 30px 60px -30px var(--ring);"></div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Навички</h2>
+      <div class="skills">
+        <div class="pill">C#, ASP.NET Core 8, Web API</div>
+        <div class="pill">Entity Framework Core, LINQ</div>
+        <div class="pill">CQRS, MediatR, Clean Architecture</div>
+        <div class="pill">React, TypeScript, Vite</div>
+        <div class="pill">Electron (desktop UI)</div>
+        <div class="pill">PostgreSQL, SQLite</div>
+        <div class="pill">SignalR, WebSockets</div>
+        <div class="pill">Git, GitHub Actions</div>
+        <div class="pill">HTML/CSS/JS, REST</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Вибрані проєкти</h2>
+      <div class="cards">
+        <article class="card col-6 project">
+          <h3>Expense Tracker (Electron + .NET 8/SQLite)</h3>
+          <p class="desc">Десктоп‑додаток із локальною базою даних, Redux‑подібний state, динамічні категорії, імпорт/експорт. Back‑end: ASP.NET Core 8, CQRS/MediatR, EF Core.</p>
+          <div class="tags">
+            <span class="tag">Electron</span><span class="tag">.NET 8</span><span class="tag">EF Core</span><span class="tag">CQRS</span>
+          </div>
+          <p><a class="link" href="https://github.com/username/expense-tracker" target="_blank" rel="noopener">Репозиторій →</a></p>
+        </article>
+        <article class="card col-6 project">
+          <h3>Booking Platform (React + ASP.NET Core)</h3>
+          <p class="desc">Дипломний проєкт: чат на SignalR, ролі, бронювання, платіжні інтеграції, деплой на VPS (Nginx). Команда з 4‑х, я — Team Lead.</p>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">SignalR</span><span class="tag">PostgreSQL</span>
+          </div>
+          <p><a class="link" href="https://github.com/username/booking" target="_blank" rel="noopener">Репозиторій →</a></p>
+        </article>
+        <article class="card col-6 project">
+          <h3>Sevent (Dynamics 365, Dataverse)</h3>
+          <p class="desc">Модель даних для кар‑рентал: Car, CarClass, Rent, CarTransferReport тощо; формули, валідації, дашборди.</p>
+          <div class="tags">
+            <span class="tag">Dataverse</span><span class="tag">Power Platform</span>
+          </div>
+        </article>
+        <article class="card col-6 project">
+          <h3>English Grammar Notebook (mini‑app)</h3>
+          <p class="desc">Нотатки та вправи для підготовки до EPAM тесту; генерація завдань без відповідей, розділення правил EN/UA.</p>
+          <div class="tags">
+            <span class="tag">Vanilla JS</span><span class="tag">UX writing</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Досвід</h2>
+      <div class="cards">
+        <article class="card xp">
+          <div class="when">2024 — нині</div>
+          <div>
+            <h3>Full‑Stack Pet Projects</h3>
+            <div class="meta">ASP.NET Core 8 · React/TS · Electron · SQLite/PostgreSQL</div>
+            <ul>
+              <li>Імплементувала CQRS/MediatR, обробку помилок, токени скасування, DI.</li>
+              <li>Налаштувала багатомовність UI, адаптивні компоненти та стани.</li>
+              <li>Побудувала CI (GitHub Actions), релізи для Windows (Electron Builder).</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card xp">
+          <div class="when">2023 — 2024</div>
+          <div>
+            <h3>Team Lead — Booking (дипломний проєкт)</h3>
+            <div class="meta">Команда 4 людини · SignalR · Clean Architecture</div>
+            <ul>
+              <li>Вела проєкт від ідеї до деплою; репозиторій і документація.</li>
+              <li>Інтегрувала реєстрацію/ролі, чат, нотифікації, пошук.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education & Certificates -->
+    <section>
+      <h2 class="section-title">Освіта</h2>
+      <div class="cards">
+        <article class="card">
+          <h3 style="margin-top:0">IT Step Academy — Software Development</h3>
+          <p class="meta">2023 — 2024</p>
+          <p>Фокус: .NET, веб‑розробка, командні проєкти, захист диплома (рекомендований до комерційного використання).</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Контакти</h2>
+      <div class="card" style="display:flex; gap: 12px; flex-wrap: wrap; align-items:center;">
+        <a class="btn" href="mailto:tanemosiichuk@example.com">✉ tanemosiichuk@example.com</a>
+        <a class="btn" href="https://t.me/username" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn" href="https://github.com/username" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> Тетяна Мосійчук. Зроблено без збірок: HTML + CSS + трохи JS.
+    </div>
+  </footer>
+
+  <script>
+  
+  </script>
+</body>
+</html>

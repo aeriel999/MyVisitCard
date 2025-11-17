@@ -1,0 +1,408 @@
+:root {
+    --bg: #0b0e14;
+    --panel: #121826;
+    --text: #eaeef7;
+    --muted: #94a3b8;
+    --accent: #22d3ee; /* cyan */
+    --accent-2: #a78bfa; /* violet */
+    --ring: rgba(34, 211, 238, 0.35);
+}
+
+:root.light {
+    --bg: #f8fafc;
+    --panel: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0ea5e9; /* sky */
+    --accent-2: #7c3aed; /* violet */
+    --ring: rgba(14, 165, 233, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+        Cantarell, Noto Sans, "Helvetica Neue", Arial;
+    color: var(--text);
+    background: radial-gradient(
+            1200px 600px at 80% -10%,
+            rgba(124, 58, 237, 0.16),
+            transparent 60%
+        ),
+        radial-gradient(
+            900px 500px at -10% 0%,
+            rgba(34, 211, 238, 0.14),
+            transparent 50%
+        ),
+        var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    width: min(1080px, 92%);
+    margin-inline: auto;
+}
+
+/* =========================
+   NAV
+   ========================= */
+
+/* HEADER background image */
+header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    height: 100px; /* ширший хедер */
+
+    background: url("../images/header-bg.webp") center/cover no-repeat,
+        linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2));
+
+    backdrop-filter: saturate(1.2) blur(10px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+main {
+    width: 80%;
+    max-width: 1200px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding-top: 24px;
+}
+/* ЛОГО В ХЕДЕРІ */
+.brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+     margin-left: -150px; 
+
+}
+
+/* саме лого */
+.brand .logo {
+    height: 85px; /* ідеальний розмір */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-pill {
+  opacity: .9;
+}
+
+
+/* =========================
+   HERO (новий дизайн)
+   ========================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); /* ліва/права частини */
+    gap: 32px;
+    align-items: center;
+padding-top: 20px; }
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 4.2vw, 46px);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+/* NEW: підзаголовок як у макеті */
+.hero-subtitle {
+    color: var(--muted);
+    font-size: clamp(15px, 2vw, 18px);
+    margin: 0;
+    max-width: 34rem;
+}
+
+/* NEW: рядок зі стеком */
+.hero-stack {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(226, 232, 240, 0.86);
+}
+
+/* Мета-бейджі (англ рівень, локація тощо) */
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.14);
+    border: 1px solid rgba(148, 163, 184, 0.24);
+}
+
+/* NEW: блок із основними CTA-кнопками */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* NEW: кнопки в hero зробила трохи більшими */
+.hero-cta {
+    padding-inline: 1.1rem;
+    padding-block: 0.8rem;
+}
+
+/* NEW: рядок соцмереж — круглі кнопки */
+.hero-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+/* NEW: стилі для круглих соц-іконок */
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    background: radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 255, 255, 0.1),
+            transparent
+        ),
+        rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    color: var(--text);
+}
+
+.social-btn:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent), 0 10px 24px -12px rgba(15, 23, 42, 0.9);
+}
+
+/* Хелпер для прихованого тексту (для screen reader) */
+.sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+/* NEW: права панель з абстрактним glow */
+/* Контейнер для фото */
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 26px;
+    overflow: hidden; /* щоб фото не вилазило */
+    border: 1px solid rgba(148, 163, 184, 0.3);
+
+    background: rgba(15, 23, 42, 0.5); /* темна підкладка */
+    box-shadow: 0 24px 60px -32px rgba(0, 0, 0, 0.8);
+
+    aspect-ratio: 4 / 5;
+    max-width: 400px;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,23,42,0.45), transparent 45%);
+  pointer-events: none;
+}
+
+/* Фото */
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* масштабування без викривлення */
+    display: block;
+    object-position: 60% 50%;
+}
+
+/* =========================
+   SECTIONS / CARDS / SKILLS
+   ========================= */
+
+section {
+    padding: 32px 0;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin: 0 0 16px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
+}
+
+.card {
+    grid-column: span 12;
+    background: var(--panel);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.card:hover {
+    border-color: rgba(148, 163, 184, 0.36);
+}
+
+/* Experience */
+.xp {
+    display: flex;
+    gap: 14px;
+}
+
+.xp .when {
+    min-width: 120px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.xp h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.xp .meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.14);
+    color: #67e8f9;
+    border: 1px solid rgba(34, 211, 238, 0.25);
+}
+
+/* Projects */
+.project {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.project h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.project .desc {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Skills grid */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.pill {
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px dashed rgba(148, 163, 184, 0.35);
+    background: linear-gradient(
+        180deg,
+        rgba(148, 163, 184, 0.06),
+        rgba(148, 163, 184, 0.02)
+    );
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+    padding: 24px 0 40px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 28px;
+    }
+
+    .hero-visual {
+        min-height: 220px;
+    }
+
+    .skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 680px) {
+    .card.col-6 {
+        grid-column: span 6;
+    }
+
+    .card.col-4 {
+        grid-column: span 4;
+    }
+}

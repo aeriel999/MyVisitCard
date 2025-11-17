@@ -1,17 +1,374 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=1">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Tania Mosiichuk - Web Developer & Programmer</title>
-    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="./icons/Main_Icon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./icons/Main_Icon_250.png" />
-    <link rel="mask-icon" href="./icons/Main_Icon.svg" color="#226DAA" />
-    <!-- <link rel="canonical" href="https://www.machinelearning.com" /> -->
-    <!-- <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" /> -->
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Tania Mosiichuk - Full‑Stack .NET Developer</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1 user-scalable=1"
+        />
+        <!-- <meta
+            http-equiv="content-security-policy"
+            content="default-src https:"
+        /> 
+        https://web.dev/articles/csp
+        -->
+        <meta
+            name="description"
+            content="Explore the portfolio and expertise of Tania Mosiichuk,
+             a passionate Web Developer and Programmer specializing in creating dynamic, 
+              user-friendly websites and applications."
+        />
+        <!-- <meta name="theme-color" content="#226DAA" /> -->
+        <meta
+            property="og:title"
+            content="Tania Mosiichuk - Web Developer & Programmer"
+        />
+        <meta
+            property="og:description"
+            content="Explore the portfolio and expertise of Tania Mosiichuk"
+        />
+        <meta property="og:image" content="./images/PreviewSite.png" />
+        <meta
+            property="og:image:alt"
+            content="Illustration of hands typing on a laptop with the title 'TAMOS - Junior Developer'"
+        />
+        <link
+            rel="icon"
+            sizes="16x16 32x32 48x48"
+            type="image/png"
+            href="icons/Main_Icon.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="icons/Main_Icon_250.png"
+        />
+        <link rel="mask-icon" href="icons/Main_Icon.svg" color="#226DAA" />
+        <!-- <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" /> -->
+        <!-- <link rel="canonical" href="https://www.machinelearning.com" /> -->
+        <link
+            rel="apple-touch-startup-image"
+            href="icons/Main_Icon.png"
+            media="orientation: portrait"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="icons/Main_Icon.png"
+            media="orientation: landscape"
+        />
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header class="nav">
+          <div class="container nav-inner">
+            <div class="brand">
+              <img src="images/header-logo.webp" alt="TaMos logo" class="logo">
+              <span class="brand-name">Tania Mosiichuk</span>
+            </div>
+
+            <div class="nav-right">
+              <span class="status-pill">🟢 Open to work</span>
+              <!-- <button id="theme" class="theme-toggle" aria-label="Перемкнути тему">
+                🌓
+              </button> -->
+            </div>
+          </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <!-- Ліва частина: текст, технології, кнопки -->
+                <div class="hero-left">
+                    <h1>Full-Stack .NET Developer</h1>
+
+                    <!-- NEW: короткий підзаголовок як у макеті -->
+                    <p class="hero-subtitle">
+                        Building clean, scalable applications with ASP.NET Core,
+                        React & SQL.
+                    </p>
+
+                    <!-- NEW: рядок зі стеком у вигляді текстового списку -->
+                    <p class="hero-stack">
+                        ASP.NET Core · EF Core · CQRS/MediatR · React/TypeScript
+                        · Electron · SQLite/PostgreSQL
+                    </p>
+
+                    <!-- Легка мета-інфа  -->
+                    <div class="hero-meta">
+                        <span class="badge">Англійська: B1+</span>
+                        <span class="badge">Україна · remote</span>
+                        <span class="badge">Відкрита до стажування/Junior</span>
+                    </div>
+
+                    <!-- NEW: основні CTA-кнопки -->
+                    <div class="hero-actions">
+                        <a class="btn primary hero-cta" href="#contact"
+                            >Hire Me</a
+                        >
+                        <a class="btn ghost hero-cta" href="./cv.pdf" download>
+                            Download CV
+                        </a>
+                    </div>
+
+                    <!-- NEW: круглі кнопки-соцмережі -->
+                    <div class="hero-socials" aria-label="Соціальні мережі">
+                        <a
+                            class="social-btn"
+                            href="https://github.com/username"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        >
+                            <span class="sr-only">GitHub</span>
+                            GH
+                        </a>
+                        <a
+                            class="social-btn"
+                            href="https://www.linkedin.com/in/username"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="LinkedIn"
+                        >
+                            <span class="sr-only">LinkedIn</span>
+                            in
+                        </a>
+                        <a
+                            class="social-btn"
+                            href="https://t.me/username"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="Telegram"
+                        >
+                            <span class="sr-only">Telegram</span>
+                            TG
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Права частина: абстрактний “glow”-блок замість аватарки -->
+                <div class="hero-visual" aria-hidden="true">
+                    <img src="images/my-photo.jpg" alt="Tania Mosiichuk Portrait" class="hero-photo">
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills">
+                <h2 class="section-title">Навички</h2>
+                <div class="skills">
+                    <div class="pill">C#, ASP.NET Core 8, Web API</div>
+                    <div class="pill">Entity Framework Core, LINQ</div>
+                    <div class="pill">CQRS, MediatR, Clean Architecture</div>
+                    <div class="pill">React, TypeScript, Vite</div>
+                    <div class="pill">Electron (desktop UI)</div>
+                    <div class="pill">PostgreSQL, SQLite</div>
+                    <div class="pill">SignalR, WebSockets</div>
+                    <div class="pill">Git, GitHub Actions</div>
+                    <div class="pill">HTML/CSS/JS, REST</div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects">
+                <h2 class="section-title">Вибрані проєкти</h2>
+                <div class="cards">
+                    <article class="card col-6 project">
+                        <h3>Expense Tracker (Electron + .NET 8/SQLite)</h3>
+                        <p class="desc">
+                            Десктоп-додаток із локальною базою даних,
+                            Redux-подібний state, динамічні категорії,
+                            імпорт/експорт. Back-end: ASP.NET Core 8,
+                            CQRS/MediatR, EF Core.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Electron</span
+                            ><span class="tag">.NET 8</span
+                            ><span class="tag">EF Core</span
+                            ><span class="tag">CQRS</span>
+                        </div>
+                        <p>
+                            <a
+                                class="link"
+                                href="https://github.com/username/expense-tracker"
+                                target="_blank"
+                                rel="noopener"
+                                >Репозиторій →</a
+                            >
+                        </p>
+                    </article>
+
+                    <article class="card col-6 project">
+                        <h3>Booking Platform (React + ASP.NET Core)</h3>
+                        <p class="desc">
+                            Дипломний проєкт: чат на SignalR, ролі, бронювання,
+                            платіжні інтеграції, деплой на VPS (Nginx). Команда
+                            з 4-х, я — Team Lead.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React</span
+                            ><span class="tag">SignalR</span
+                            ><span class="tag">PostgreSQL</span>
+                        </div>
+                        <p>
+                            <a
+                                class="link"
+                                href="https://github.com/username/booking"
+                                target="_blank"
+                                rel="noopener"
+                                >Репозиторій →</a
+                            >
+                        </p>
+                    </article>
+
+                    <article class="card col-6 project">
+                        <h3>Sevent (Dynamics 365, Dataverse)</h3>
+                        <p class="desc">
+                            Модель даних для кар-рентал: Car, CarClass, Rent,
+                            CarTransferReport тощо; формули, валідації,
+                            дашборди.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Dataverse</span
+                            ><span class="tag">Power Platform</span>
+                        </div>
+                    </article>
+
+                    <article class="card col-6 project">
+                        <h3>English Grammar Notebook (mini-app)</h3>
+                        <p class="desc">
+                            Нотатки та вправи для підготовки до EPAM тесту;
+                            генерація завдань без відповідей, розділення правил
+                            EN/UA.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Vanilla JS</span
+                            ><span class="tag">UX writing</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section id="experience">
+                <h2 class="section-title">Досвід</h2>
+                <div class="cards">
+                    <article class="card xp">
+                        <div class="when">2024 — нині</div>
+                        <div>
+                            <h3>Full-Stack Pet Projects</h3>
+                            <div class="meta">
+                                ASP.NET Core 8 · React/TS · Electron ·
+                                SQLite/PostgreSQL
+                            </div>
+                            <ul>
+                                <li>
+                                    Імплементувала CQRS/MediatR, обробку
+                                    помилок, токени скасування, DI.
+                                </li>
+                                <li>
+                                    Налаштувала багатомовність UI, адаптивні
+                                    компоненти та стани.
+                                </li>
+                                <li>
+                                    Побудувала CI (GitHub Actions), релізи для
+                                    Windows (Electron Builder).
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card xp">
+                        <div class="when">2023 — 2024</div>
+                        <div>
+                            <h3>Team Lead — Booking (дипломний проєкт)</h3>
+                            <div class="meta">
+                                Команда 4 людини · SignalR · Clean Architecture
+                            </div>
+                            <ul>
+                                <li>
+                                    Вела проєкт від ідеї до деплою; репозиторій
+                                    і документація.
+                                </li>
+                                <li>
+                                    Інтегрувала реєстрацію/ролі, чат,
+                                    нотифікації, пошук.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section>
+                <h2 class="section-title">Освіта</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3 style="margin-top: 0">
+                            IT Step Academy — Software Development
+                        </h3>
+                        <p class="meta">2023 — 2024</p>
+                        <p>
+                            Фокус: .NET, веб-розробка, командні проєкти, захист
+                            диплома (рекомендований до комерційного
+                            використання).
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact">
+                <h2 class="section-title">Контакти</h2>
+                <div
+                    class="card"
+                    style="
+                        display: flex;
+                        gap: 12px;
+                        flex-wrap: wrap;
+                        align-items: center;
+                    "
+                >
+                    <a class="btn" href="mailto:tanemosiichuk@example.com">
+                        ✉ tanemosiichuk@example.com
+                    </a>
+                    <a
+                        class="btn"
+                        href="https://t.me/username"
+                        target="_blank"
+                        rel="noopener"
+                        >Telegram</a
+                    >
+                    <a
+                        class="btn"
+                        href="https://github.com/username"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub</a
+                    >
+                    <a
+                        class="btn"
+                        href="https://www.linkedin.com/in/username"
+                        target="_blank"
+                        rel="noopener"
+                        >LinkedIn</a
+                    >
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                &copy; <span id="y"></span> TaMos. All rights reserved.
+            </div>
+        </footer>
+    </body>
 </html>
